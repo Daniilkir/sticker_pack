@@ -1,15 +1,27 @@
+import React, { Component } from 'react'
+
+class Choice extends Component {
+
+    includes = (element) => {
+        while (element.keys !== this.props.choosenSticker) {
+            
+        }
+    }
+
+    render(){
 
 
-export const Choice = ({data})=>{
-
-    return(
-        <div>
-            <h2>Обраний стікер</h2>
+        return(
             <div>
-                <img src={data.src} alt="" />
-                <p>{data.label}</p>
+                <h2>Обраний стікер</h2>
+                <div>
+                    {/* <img src={this.props.data.src} alt="" /> */}
+                    {this.props.data.find()}
+                    <p>{this.props.choosenSticker}</p>
+                </div>
             </div>
-        </div>
-    )
-
+        )
+    }
 }
+
+export default Choice

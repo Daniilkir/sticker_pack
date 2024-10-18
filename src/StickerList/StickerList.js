@@ -1,11 +1,31 @@
-import styled from 'styled-components'
+import React, { Component } from 'react'
+import Sticker from '../Sticker/Sticker'
+import { ListSticker } from './ListSticker'
 
-export const ListSticker = styled.ul`
-list-style: none;
-display: flex;
-aligin-items:center;
-gap: 20px;
-justify-content: center;
-`
-    
+class StickerList extends Component {
 
+
+
+    render(){
+
+        // console.log(this.props.data)
+        return (
+            <ListSticker>
+                {this.props.data.map((element) => {
+                    return (
+                        <li key={element.label} className={element.label} onClick={this.props.choosenSticker}>
+                            <Sticker src={element.img} />
+                        </li>
+                    )
+        
+                }
+                )}
+            </ListSticker>
+        )
+    }
+}
+
+export default StickerList
+// export const StickerList = ({data}) => {
+
+// }

@@ -1,25 +1,30 @@
 import './App.css';
-import { StickerList } from './StickerList/StickerList.jsx';
+import StickerList  from './StickerList/StickerList.js';
 import stickersData from './sticker.json'
-import { Choice } from './Choice/Choice.jsx'
-import react, { Component } from 'react'
+import Choice from './Choice/Choice.jsx'
+import React, { Component } from 'react'
 
 
 class  App extends Component {
-  state = {data:stickersData}
+  state = {
+    data:stickersData,
+    choosedSticker:""
+  }
 
-// getInfo (event) => {
-//     return(
-//         console.log(123)
-//     )
-// }
+
+choosenSticker = (event) => {
+  this.setState({choosedSticker: event.currentTarget.className})
+  // this.setState({choosedSticker: "34785"})
+  console.log(this.state.choosedSticker);
+  
+}
+
 render(){
-  // console.log(this.state.data);
 
   return(
         <div className="App">
-          <StickerList data={this.state.data} />
-          <Choice data={this.state.data} />
+          <StickerList data={this.state.data} choosenSticker={this.choosenSticker}/>
+          <Choice data={this.state.data} choosenSticker={this.state.choosedSticker}/>
         </div>
       );
       
