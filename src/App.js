@@ -15,7 +15,7 @@ class  App extends Component {
 choosenSticker = (event) => {
   this.setState({choosedSticker: event.currentTarget.className})
   // this.setState({choosedSticker: "34785"})
-  console.log(this.state.choosedSticker);
+  // console.log(this.state.choosedSticker);
   
 }
 
